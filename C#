@@ -1,0 +1,71 @@
+namespace Nícolas_Joly_Mussi_2025105022
+{
+    public partial class Form1 : Form
+    {
+
+        private int _contador = 0;
+
+        private int Contador
+        {
+            get => _contador;
+            set => _contador = Math.Min(value, 10);
+        }
+        public Form1()
+        {
+            InitializeComponent();
+            lblContador.Text = "";
+            lblMensagem.Text = "";
+            lblNome.Text = "Nome: Nícolas Joly Mussi";
+            lblRa.Text = "RA: 2025105022";
+        }
+
+        private void btnContar_Click(object sender, EventArgs e)
+        {
+            Contador++;
+            lblContador.Text = Contador.ToString();
+            switch (Contador)
+            {
+                case 0:
+                    lblMensagem.Text = "";
+                    break;
+                case 1:
+                    lblMensagem.Text = ".";
+                    break;
+                case 2:
+                    lblMensagem.Text = "..";
+                    break;
+                case 3:
+                    lblMensagem.Text = "...";
+                    break;
+                case 4:
+                    lblMensagem.Text = "....";
+                    break;
+                case 5:
+                    lblMensagem.Text = ".....";
+                    break;
+                case 6:
+                    lblMensagem.Text = "......";
+                    break;
+                case 7:
+                    lblMensagem.Text = "Faltam 3 cliques";
+                    break;
+                case 8:
+                    lblMensagem.Text = "Faltam 2 cliques";
+                    break;
+                case 9:
+                    lblMensagem.Text = "Falta 1 clique";
+                    break;
+                case 10:
+                    lblMensagem.Text = "Você chegou ao Fim! Clique em Zerar para recomeçar";
+                    break;
+            }
+        }
+
+        private void btnZerar_Click(object sender, EventArgs e)
+        {
+            Contador = 0;
+            lblContador.Text = "";
+            lblMensagem.Text = "Contador zerado! Clique em Contar para recomeçar.";
+        }
+    }
+}
